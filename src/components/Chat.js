@@ -65,7 +65,7 @@ function Chat() {
         websocket.close();
       }
     };
-  }, [username, navigate]);
+  }, [username, navigate, SOCKET_BASE_URL]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
