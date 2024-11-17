@@ -143,6 +143,7 @@ const RecordingControls = ({ setInputMessage, apiBaseUrl, username }) => {
     if (audioBlob && !isOn) {
       sendBlobToAPI();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [audioBlob]);
 
   useEffect(() => {
@@ -194,6 +195,7 @@ const RecordingControls = ({ setInputMessage, apiBaseUrl, username }) => {
     return () => {
       clearInterval(intervalId.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recording]);
 
   return (
