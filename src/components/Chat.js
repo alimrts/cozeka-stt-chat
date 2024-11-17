@@ -14,6 +14,7 @@ function Chat() {
   const navigate = useNavigate();
   const username = localStorage.getItem("username");
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  const SOCKET_BASE_URL = process.env.REACT_APP_SOCKET_BASE_URL;
 
   useEffect(() => {
     if (!username) {
@@ -24,7 +25,7 @@ function Chat() {
     if (wsInitialized.current) return;
     wsInitialized.current = true;
 
-    const websocket = new WebSocket("wss://212.253.114.133:4445/");
+    const websocket = new WebSocket(SOCKET_BASE_URL);
 
     websocket.onopen = () => {
       console.log("Connected to WebSocket");
